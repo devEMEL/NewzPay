@@ -9,8 +9,9 @@ const nextConfig = {
     return config;
   },
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: true,
   },
+  basePath: "/github-pages",
 };
 
 module.exports = nextConfig;
