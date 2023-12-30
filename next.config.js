@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const debug = process.env.NODE_ENV !== "production";
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -11,7 +12,18 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  basePath: "/github-pages",
+  // basePath: "/github-pages",
+  exportPathMap: function () {
+    // /Next-React-Components
+    return {
+      "/": { page: "/" },
+      "/ap-grid-layout": { page: "/ap-grid-layout" },
+      "/ap-highlight": { page: "/ap-highlight" },
+    };
+  },
+  assetPrefix: !debug
+    ? "https://devemel.github.io/NewzPay/"
+    : "",
 };
 
 module.exports = nextConfig;
