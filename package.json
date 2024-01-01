@@ -23,6 +23,7 @@
         "use-debounce": "^9.0.4",
         "wagmi": "^0.12.2"
     },
+    
     "devDependencies": {
         "@types/node": "18.15.2",
         "@types/react": "18.0.27",
@@ -34,6 +35,7 @@
         "tailwindcss": "^3.2.7",
         "typescript": "4.9.5"
     },
+
     "browser": {
         "net": false
     }
