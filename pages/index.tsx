@@ -13,7 +13,7 @@ export default function Home() {
       <Head>
         <title>NewzPay</title>
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         ></meta>
       </Head>
