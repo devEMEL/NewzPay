@@ -9,10 +9,7 @@ import type { AppProps } from "next/app";
 
 // Import the connectorsForWallets function to create a list of wallets to connect to.
 // Import the RainbowKitProvider component to wrap the app with.
-import {
-  connectorsForWallets,
-  RainbowKitProvider,
-} from "@rainbow-me/rainbowkit";
+import { connectorsForWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 
 // Import three different wallets connectors from the RainbowKit package.
 import { metaMaskWallet } from "@rainbow-me/rainbowkit/wallets";
@@ -31,50 +28,51 @@ import { ToastContainer } from "react-toastify";
 
 import { publicProvider } from "wagmi/providers/public";
 const okpoko: Chain = {
-  id: 0x500fad,
-  name: "Okpoko",
-  network: "okpoko",
-  iconUrl: "https://example.com/icon.svg",
-  iconBackground: "#fff",
-  nativeCurrency: {
-    decimals: 18,
-    name: "OKPOKO",
-    symbol: "OKP",
-  },
-  rpcUrls: {
-    public: { http: ["http://173.249.25.82:8545"] },
-    default: { http: ["http://173.249.25.82:8545"] },
-  },
-
-  testnet: false,
+    id: 0x500fad,
+    name: "Okpoko",
+    network: "okpoko",
+    iconUrl: "https://example.com/icon.svg",
+    iconBackground: "#fff",
+    nativeCurrency: {
+        decimals: 18,
+        name: "OKPOKO",
+        symbol: "OKP",
+    },
+    rpcUrls: {
+        public: { http: ["http://173.249.25.82:8545"] },
+        default: { http: ["http://173.249.25.82:8545"] },
+    },
+  
+    testnet: false,
 };
 const { provider, chains } = configureChains([okpoko], [publicProvider()]);
 
+
 const { connectors } = getDefaultWallets({
-  appName: "NewzPay",
-  projectId: "f2b6bcbe27485bc2aa6c3c619c9e7165",
-  chains,
+    appName: "My RainbowKit App",
+    projectId: "YOUR_PROJECT_ID",
+    chains,
 });
 
 // Create the Wagmi client.
 const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
+    autoConnect: true,
+    connectors,
+    provider,
 });
 
 // Create and export the App component wrapped with the RainbowKitProvider and WagmiConfig.
 function App({ Component, pageProps }: AppProps) {
-  return (
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} coolMode={true}>
-        <ToastContainer position={"bottom-center"} />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </RainbowKitProvider>
-    </WagmiConfig>
-  );
+    return (
+        <WagmiConfig client={wagmiClient}>
+            <RainbowKitProvider chains={chains} coolMode={true}>
+                <ToastContainer position={"bottom-center"} />
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </RainbowKitProvider>
+        </WagmiConfig>
+    );
 }
 
 export default App;
