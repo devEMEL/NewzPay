@@ -22,7 +22,7 @@ const nextConfig = {
     };
   },
   assetPrefix: !debug
-    ? "https://devemel.github.io/NewzPay/"
+    ? ""
     : "",
 };
 
