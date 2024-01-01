@@ -17,13 +17,9 @@ const nextConfig = {
     // /Next-React-Components
     return {
       "/": { page: "/" },
-      "/ap-grid-layout": { page: "/ap-grid-layout" },
-      "/ap-highlight": { page: "/ap-highlight" },
+      "/faucet": { page: "/faucet" },
     };
   },
-  assetPrefix: !debug
-    ? ""
-    : "",
 };
 
 module.exports = nextConfig;
