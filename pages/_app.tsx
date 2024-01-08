@@ -39,8 +39,8 @@ const okpoko: Chain = {
         symbol: "OKP",
     },
     rpcUrls: {
-        public: { http: ["http://173.249.25.82:8545"] },
-        default: { http: ["http://173.249.25.82:8545"] },
+        public: { http: ["https://froopyland.dymension.xyz/25/okpoko_5246893-1/evmrpc"] },
+        default: { http: ["https://froopyland.dymension.xyz/25/okpoko_5246893-1/evmrpc"] },
     },
   
     testnet: false,
@@ -49,8 +49,8 @@ const { provider, chains } = configureChains([okpoko], [publicProvider()]);
 
 
 const { connectors } = getDefaultWallets({
-    appName: "My RainbowKit App",
-    projectId: "YOUR_PROJECT_ID",
+    appName: "NewzPay",
+    projectId: "f2b6bcbe27485bc2aa6c3c619c9e7165",
     chains,
 });
 

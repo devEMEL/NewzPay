@@ -5,7 +5,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 // Import ethers to format the price of the product correctly
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 // Import the useConnectModal hook to trigger the wallet connect modal
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 // Import the useAccount hook to get the user's address

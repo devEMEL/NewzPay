@@ -12,7 +12,7 @@ const Faucet = () => {
     const providerRPC = {
         okpoko: {
             name: "okpoko",
-            rpc: "http://173.249.25.82:8545",
+            rpc: "https://froopyland.dymension.xyz/25/okpoko_5246893-1/evmrpc",
             chainId: 0x500fad,
         },
     };
